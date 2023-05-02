@@ -1,0 +1,49 @@
+/* Custom styles come in here */
+:root {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --main-bg: hsl(180, 29%, 50%);
+    --light-grayish-cyan-background: hsl(180, 52%, 96%);
+    --light-grayish-cyan-filtered: hsl(180, 31%, 95%);
+    --dark-grayish-cyan: hsl(180, 8%, 52%);
+    --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+}
+
+.wrapper {
+    background-color: var(--light-grayish-cyan-background);
+}
+
+.component {
+    /* background-image: url('../static-job-listings-master/images/bg-header-desktop.svg'); */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: top;
+}
+
+.job {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.job__component {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white);
+}
+
+.job__left-details,
+.job__right-details,
+.job__categories,
+.job__languages,
+.job__tools {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.job__categories {
+    flex-direction: column;
+}
