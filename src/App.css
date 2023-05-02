@@ -9,29 +9,50 @@
     --very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
+html {
+    font-family: 'League Spartan', sans-serif;
+    ;
+    font-size: 15px;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.dot {
+    font-size: 0.2rem;
+    color: var(--dark-grayish-cyan);
+}
+
 .wrapper {
     background-color: var(--light-grayish-cyan-background);
+    min-height: 100%;
+    padding: 1rem;
 }
 
 .component {
     /* background-image: url('../static-job-listings-master/images/bg-header-desktop.svg'); */
-    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-position: top;
+    gap: 1rem;
 }
 
 .job {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    padding: 0.2rem 1rem;
+    background-color: var(--white);
+    align-items: center;
+    justify-content: center;
+    box-shadow: 7px 10px 15px 0 var(--light-grayish-cyan-filtered);
+    border-radius: 4px;
 }
 
 .job__component {
     display: flex;
+    width: 800px;
     justify-content: space-between;
-    background-color: var(--white);
 }
 
 .job__left-details,
@@ -45,5 +66,100 @@
 }
 
 .job__categories {
+    align-items: flex-start;
+}
+
+.job__categories {
     flex-direction: column;
+}
+
+/* style of special (mapped) features */
+.job__logo {
+    width: 70px;
+    object-fit: cover;
+}
+
+.job__adds,
+.job__position,
+.job__language .job__tool {
+    font-weight: 700;
+}
+
+.job__adds:not(.job__adds:nth-child(1)) {
+    border-radius: 20px;
+    padding: 0.3em;
+    font-size: 0.9rem;
+}
+
+.job__adds {
+    margin: 0;
+    margin-right: 0.5rem;
+}
+
+.job__adds:nth-child(1) {
+    color: var(--main-bg);
+}
+
+.job__adds:nth-child(2) {
+    color: var(--light-grayish-cyan-filtered);
+    background-color: var(--main-bg);
+}
+
+.job__adds:nth-child(3) {
+    color: var(--light-grayish-cyan-filtered);
+    background-color: var(--very-dark-grayish-cyan);
+}
+
+.job:has(.job__adds--features) {
+    position: relative;
+    border-left: 4px solid var(--main-bg);
+}
+
+p:has(.job__adds--features)::after {
+    /* content: ""; */
+    width: 5px;
+    height: 150px;
+    background-color: red;
+    position: absolute;
+    bottom: -100px;
+    right: 310px;
+    z-index: 0;
+}
+
+.job__specs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--dark-grayish-cyan);
+}
+
+.job__right-details>* {
+    background-color: var(--light-grayish-cyan-background);
+    color: var(--main-bg);
+    font-weight: 700;
+    padding: 0.7rem;
+    border-radius: 5px;
+}
+
+.job__language {
+    margin-right: 2px;
+}
+
+.job__languages,
+.job__language,
+.job__tools,
+.job__tool {
+    padding: 0.4rem;
+    margin: 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer__link {
+    font-weight: bold;
+    color: var(--main-bg);
 }
